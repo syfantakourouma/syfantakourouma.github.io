@@ -223,4 +223,115 @@
 
         }
 
+/* Interactive Skills Cards */
+
+.skill-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+    margin-top: 30px;
+
+}
+
+.skill-card {
+
+    background: #111d35;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+    text-align: left;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+
+    font-family: inherit;
+
+}
+
+.skill-card h3 {
+
+    color: #ffffff;
+
+    margin-bottom: 10px;
+
+}
+
+.skill-card p {
+
+    color: #aab8d0;
+
+    margin: 0;
+
+}
+
+.skill-card:hover {
+
+    border-color: #398bff;
+
+}
+
+.skill-card.active {
+
+    border: 1px solid #398bff;
+
+    background: #142746;
+
+    box-shadow: 0 0 18px rgba(57, 139, 255, 0.35);
+
+    transform: translateY(-3px);
+
+}
+
+.skill-detail {
+
+    margin-top: 30px;
+
+    padding: 25px;
+
+    background: #111d35;
+
+    border-left: 3px solid #398bff;
+
+    border-radius: 10px;
+
+    min-height: 100px;
+
+}
+
+.skill-detail h3 {
+
+    color: #398bff;
+
+    margin-bottom: 10px;
+
+}
+
+.skill-detail p {
+
+    color: #c1cce0;
+
+    line-height: 1.7;
+
+}
+
+@media (max-width: 650px) {
+
+    .skill-grid {
+
+        grid-template-columns: 1fr;}
+
+}
+
+
     </style>
