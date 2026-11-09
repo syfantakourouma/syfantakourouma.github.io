@@ -104,36 +104,46 @@
         <p>© 2026 Syfanta Kourouma | Data Analytics Portfolio</p>
     </footer>
 
-    <script>
+   <script>
 
-        const skillCards = document.querySelectorAll(".skill-card");
+    const skillCards = document.querySelectorAll(".skill-card");
 
-        const skillTitle = document.getElementById("skill-title");
-        const skillDescription = document.getElementById("skill-description");
+    const skillTitle = document.getElementById("skill-title");
+    const skillDescription = document.getElementById("skill-description");
 
-        skillCards.forEach(card => {
+    skillCards.forEach(card => {
 
-            card.addEventListener("click", () => {
+        card.addEventListener("click", () => {
 
-                skillCards.forEach(item => {
-                    item.classList.remove("active");
-                    item.setAttribute("aria-pressed", "false");
-                });
-
-                card.classList.add("active");
-                card.setAttribute("aria-pressed", "true");
-
-                skillTitle.textContent = card.dataset.title;
-
-                const skills = card.dataset.skills.split("|");
-
-                skillDescription.textContent = skills.join("  •  ");
-
+            skillCards.forEach(item => {
+                item.classList.remove("active");
+                item.setAttribute("aria-pressed", "false");
             });
+
+            card.classList.add("active");
+            card.setAttribute("aria-pressed", "true");
+
+            skillTitle.textContent = card.dataset.title;
+
+            const skills = card.dataset.skills.split("|");
+
+            skillDescription.innerHTML = "";
+
+            skills.forEach(skill => {
+                const tag = document.createElement("span");
+                tag.className = "skill-tag";
+                tag.textContent = skill;
+                skillDescription.appendChild(tag);
+            });
+
+            skillDescription.classList.add("skill-tags");
 
         });
 
-    </script>
+    });
 
+</script>
+
+       
 </body>
 </html>
