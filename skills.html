@@ -31,80 +31,70 @@
             <h1>Technical <span>Skills</span></h1>
 
             <p class="intro">
-                The tools, technologies and analytical techniques
-                I am developing through my postgraduate studies
-                and practical projects.
+                My technical skills and professional capabilities,
+                developed through my academic studies, technical
+                training and practical experience.
             </p>
 
             <h2>Explore My Skills</h2>
 
-            <p>Select a skill to learn more about how I use it.</p>
+            <p>Select a category to explore the skills and tools I use.</p>
 
             <div class="skill-grid">
 
                 <button class="skill-card" type="button"
-                    data-title="R Programming"
-                    data-description="Using R and RStudio to work with datasets, carry out statistical analysis and explore data.">
-                    <h3>R Programming</h3>
-                    <p>Data analysis and programming</p>
+                    data-title="Analysis & Visualisation"
+                    data-skills="Data cleaning|Data modelling|Dashboards and reporting|Power BI|RStudio">
+                    <h3>Analysis & Visualisation</h3>
+                    <p>Data analysis and visual reporting</p>
                 </button>
 
                 <button class="skill-card" type="button"
-                    data-title="SQL & Oracle"
-                    data-description="Writing SQL queries, filtering and aggregating data, and working with relational databases using Oracle.">
-                    <h3>SQL & Oracle</h3>
-                    <p>Queries and database management</p>
+                    data-title="Databases"
+                    data-skills="SQL (Oracle)|Querying|Filtering|Aggregation|Database design and development">
+                    <h3>Databases</h3>
+                    <p>SQL and database development</p>
                 </button>
 
                 <button class="skill-card" type="button"
-                    data-title="Statistical Analysis"
-                    data-description="Applying statistical methods including hypothesis testing and regression, and interpreting analytical results.">
-                    <h3>Statistical Analysis</h3>
-                    <p>Testing and interpreting data</p>
+                    data-title="Programming"
+                    data-skills="Python|R|SQL|HTML">
+                    <h3>Programming</h3>
+                    <p>Programming languages and technologies</p>
                 </button>
 
                 <button class="skill-card" type="button"
                     data-title="Microsoft Excel"
-                    data-description="Organising and cleaning data using formulas, pivot tables, XLOOKUP and VLOOKUP, filters and charts.">
+                    data-skills="Pivot tables|XLOOKUP and VLOOKUP|Charts|Data cleaning|Data filtering">
                     <h3>Microsoft Excel</h3>
-                    <p>Data cleaning and reporting</p>
+                    <p>Data organisation and reporting</p>
                 </button>
 
                 <button class="skill-card" type="button"
-                    data-title="ggplot2"
-                    data-description="Creating data visualisations in R to explore patterns and communicate findings.">
-                    <h3>ggplot2</h3>
-                    <p>Data visualisation</p>
+                    data-title="Ways of Working"
+                    data-skills="Agile fundamentals|Project management|Requirements analysis|Stakeholder communication">
+                    <h3>Ways of Working</h3>
+                    <p>Professional and project skills</p>
                 </button>
 
                 <button class="skill-card" type="button"
-                    data-title="R Markdown"
-                    data-description="Producing analytical reports that combine R code, statistical outputs and written explanations.">
-                    <h3>R Markdown</h3>
-                    <p>Reproducible reporting</p>
-                </button>
-
-                <button class="skill-card" type="button"
-                    data-title="Power BI"
-                    data-description="Developing skills in business intelligence, dashboard creation and data reporting.">
-                    <h3>Power BI</h3>
-                    <p>Business intelligence</p>
-                </button>
-
-                <button class="skill-card" type="button"
-                    data-title="Python"
-                    data-description="Developing programming skills in Python through my technical training and data science studies.">
-                    <h3>Python</h3>
-                    <p>Programming and data science</p>
+                    data-title="Data Analytics Experience"
+                    data-skills="Extracting raw data from web sources|Cleaning and transforming datasets|Writing SQL queries|Identifying patterns and trends|Creating Power BI dashboards and Excel reports|Data visualisation">
+                    <h3>Data Analytics Experience</h3>
+                    <p>Applying analytical skills in projects</p>
                 </button>
 
             </div>
 
             <div class="skill-detail" id="skill-detail" aria-live="polite">
-                <h3 id="skill-title">Choose a skill</h3>
+
+                <h3 id="skill-title">Explore a category</h3>
+
                 <p id="skill-description">
-                    Click on any skill card above to see more information.
+                    Select one of the six categories above to see
+                    the skills included.
                 </p>
+
             </div>
 
         </div>
@@ -115,12 +105,14 @@
     </footer>
 
     <script>
+
         const skillCards = document.querySelectorAll(".skill-card");
 
         const skillTitle = document.getElementById("skill-title");
         const skillDescription = document.getElementById("skill-description");
 
         skillCards.forEach(card => {
+
             card.addEventListener("click", () => {
 
                 skillCards.forEach(item => {
@@ -132,9 +124,15 @@
                 card.setAttribute("aria-pressed", "true");
 
                 skillTitle.textContent = card.dataset.title;
-                skillDescription.textContent = card.dataset.description;
+
+                const skills = card.dataset.skills.split("|");
+
+                skillDescription.textContent = skills.join("  •  ");
+
             });
+
         });
+
     </script>
 
 </body>
