@@ -465,5 +465,27 @@ footer {
         grid-template-columns: 1fr;
 
     }
+/* SKILL TAGS */
 
+.skill-detail .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.skill-tag {
+    display: inline-block;
+    background: #172b49;
+    border: 1px solid #398bff;
+    color: #93c5fd;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: background 0.2s ease;
+}
+
+.skill-tag:hover {
+    background: #203e66;
+}
 }
